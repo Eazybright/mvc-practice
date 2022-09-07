@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block content %}
+{% if errormsg is defined %}
+<div class="alert error">{{ errormsg }}</div>
+{% else %}
+<div class="alert success">
+    Bravo! Post was created successfully!
+</div>
+{% endif %}
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>ACTIONS</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}
+    <tr>
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td><a href="{{ editPostUrl(post.id) }}">Edit Post</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
