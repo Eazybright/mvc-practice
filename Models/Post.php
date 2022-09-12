@@ -27,5 +27,13 @@ class Post
         }
         $this->content = $content;
     }
+
+
+    private function AddItem()
+    {
+//        INSERT into todolist ('vhjhjd', jdhjdhj, 'hdhdjhd');
+//        SELECT
+//        INNER JOIN
+    }
 }
 
