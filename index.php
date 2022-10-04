@@ -1,13 +1,18 @@
 <?php
-require('./Controllers/Controller.php');
-require('./Models/Model.php');
-require('./Views/View.php');
 
-$model = new Model();
-$controller = new Controller($model);
-$view = new View($controller, $model);
+//use LibraryLoaderAutoloader,
+//    LibraryControllerFrontController;
+require ('controllers/FrontController.php');
 
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-    $controller->{$_GET['action']}();
-}
-echo $view->output();
+require_once __DIR__ . "/vendor/autoload.php";
+//$autoloader = new Autoloader;
+//$autoloader->register();
+echo $_SERVER['REQUEST_URI'];
+
+//$frontController = new FrontController();
+$frontController = new FrontController(array(
+    "controller" => "about",
+    "action"     => "show",
+    "params"     => array(1)
+));
+$frontController->run();

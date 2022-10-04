@@ -2,6 +2,11 @@
 
 class PostsController
 {
+    public function show()
+    {
+        echo 'PostContoller - Show method is here';
+    }
+
     public function updateAction(Request $request)
     {
         if (

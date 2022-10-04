@@ -1,11 +1,11 @@
 <?php
-require_once ('Controller.php');
-//use Controllers\Controller;
+//require_once ('Controller.php');
+//use Controllers\Controller; extends Controller
 
-class AboutController extends Controller
+class AboutController
 {
-//    public function __construct($model)
-//    {
-//        $this->model = $model;
-//    }
+    public function show()
+    {
+        echo 'AboutController - Show method is here';
+    }
 }
